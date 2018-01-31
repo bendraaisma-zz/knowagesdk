@@ -3,7 +3,7 @@
 export class Sbi {
     constructor(protocol: string, host: string, port: string, contextPath: string, controllerPath: string);
 
-    authenticate(user: string, password: string, callback: function): void;
+    authenticate(user: string, password: string, callback: any): void;
 
     getDocumentHtml(documentLabel: string, parameters: string[]): any;
 
@@ -11,7 +11,7 @@ export class Sbi {
 
 export namespace Sbi {
     namespace prototype {
-        function authenticate(user: string, password: string, callback: function): void;
+        function authenticate(user: string, password: string, callback: any): void;
 
         function getDocumentHtml(documentLabel: string, parameters: string[]): any;
 
