@@ -2,56 +2,56 @@
 
 const sbisdk = require("./sbisdk-all-production");
 
-var baseUrlModule = (function() {
-
-	var BaseUrl = function() {
-		this.protocol = 'http';
-		this.host = 'localhost';
-		this.port = '8080';
-		this.contextPath = 'knowage';
-		this.controllerPath = 'servlet/AdapterHTTP';
-	}
-
-	return {
-		BaseUrl : BaseUrl
-	}
-
-}());
-
-var iFrameModule = (function() {
-
-	var Iframe = function() {
-		this.height = '400px';
-		this.width = '100%';
-		this.style = 'border: 0px;';
-	}
-
-	return {
-		Iframe : Iframe
-	}
-
-}());
-
-var documentHtmlConfigModule = (function() {
-
-	var DocumentHtmlConfig = function() {
-		this.documentId = '';
-		this.documentLabel = '';
-		this.parameters = null;
-		this.executionRole = '';
-		this.displayToolbar = false;
-		this.displaySliders = false;
-		this.iframe = new iFrameModule();
-	}
-
-	return {
-		DocumentHtmlConfig : DocumentHtmlConfig
-	}
-
-}());
-
 var sbiModule = (function() {
 
+	var baseUrlModule = (function() {
+
+		var BaseUrl = function() {
+			this.protocol = 'http';
+			this.host = 'localhost';
+			this.port = '8080';
+			this.contextPath = 'knowage';
+			this.controllerPath = 'servlet/AdapterHTTP';
+		}
+
+		return {
+			BaseUrl : BaseUrl
+		}
+
+	}());
+
+	var iFrameModule = (function() {
+
+		var Iframe = function() {
+			this.height = '400px';
+			this.width = '100%';
+			this.style = 'border: 0px;';
+		}
+
+		return {
+			Iframe : Iframe
+		}
+
+	}());
+	
+	var documentHtmlConfigModule = (function() {
+
+		var DocumentHtmlConfig = function() {
+			this.documentId = '';
+			this.documentLabel = '';
+			this.parameters = null;
+			this.executionRole = '';
+			this.displayToolbar = false;
+			this.displaySliders = false;
+			this.iframe = new iFrameModule();
+		}
+
+		return {
+			DocumentHtmlConfig : DocumentHtmlConfig
+		}
+
+	}());
+	
 	var Sbi = function(config = new baseUrlModule.BaseUrl()) {
 		sbisdk.sdk.services.setBaseUrl(config);
 	};
@@ -93,7 +93,4 @@ var sbiModule = (function() {
 	}
 }());
 
-module.exports = baseUrlModule;
-module.exports = iFrameModule;
-module.exports = documentHtmlConfigModule;
 module.exports = sbiModule;
