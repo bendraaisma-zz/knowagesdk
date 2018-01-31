@@ -2,51 +2,98 @@
 
 const sbisdk = require("./sbisdk-all-production");
 
-var sbiModule = (function () {
+var baseUrlModule = (function() {
 
-	var Sbi = function (config) {
-		sbisdk.sdk.services.setBaseUrl(config);
-    };
+	var BaseUrl = function() {
+		this.protocol = 'http';
+		this.host = 'localhost';
+		this.port = '8080';
+		this.contextPath = 'knowage';
+		this.controllerPath = 'servlet/AdapterHTTP';
+	}
 
-    Sbi.prototype.setBaseUrl = function () {
-    	sbisdk.sdk.services.setBaseUrl(config);
-    };
-    
-    Sbi.prototype.getDocumentHtml = function (config) {
-    	return sbisdk.sdk.api.getDocumentHtml(config);
-    };
-    
-    Sbi.prototype.injectDocument = function (config) {
-    	return sbisdk.sdk.api.injectDocument(config);
-    };
-    
-    Sbi.prototype.getWorksheetHtml = function (config) {
-    	return sbisdk.sdk.api.getWorksheetHtml(config);
-    };
-    
-    Sbi.prototype.injectWorksheet = function (config) {
-    	return sbisdk.sdk.api.injectWorksheet(config);
-    };
-    
-    Sbi.prototype.getQbeHtml = function (config) {
-    	return sbisdk.sdk.api.getQbeHtml(config);
-    };
+	return {
+		BaseUrl : BaseUrl
+	}
 
-    Sbi.prototype.injectQbe = function (config) {
-    	return sbisdk.sdk.api.injectQbe(config);
-    };
-    
-    Sbi.prototype.getDataSetList = function (config) {
-    	return sbisdk.sdk.api.getDataSetList(config);
-    };
-    
-    Sbi.prototype.executeDataSet = function (config) {
-    	return sbisdk.sdk.api.executeDataSet(config);
-    };
-
-    return {
-    	Sbi: Sbi
-    }
 }());
 
+var iFrameModule = (function() {
+
+	var Iframe = function() {
+		this.height = '400px';
+		this.width = '100%';
+		this.style = 'border: 0px;';
+	}
+
+	return {
+		Iframe : Iframe
+	}
+
+}());
+
+var documentHtmlConfigModule = (function() {
+
+	var DocumentHtmlConfig = function() {
+		this.documentId = '';
+		this.documentLabel = '';
+		this.parameters = null;
+		this.executionRole = '';
+		this.displayToolbar = false;
+		this.displaySliders = false;
+		this.iframe = new iFrameModule();
+	}
+
+	return {
+		DocumentHtmlConfig : DocumentHtmlConfig
+	}
+
+}());
+
+var sbiModule = (function() {
+
+	var Sbi = function(configModule) {
+		sbisdk.sdk.services.setBaseUrl(baseUrlModule);
+	};
+
+	Sbi.prototype.getDocumentHtml = function(documentHtmlConfigModule) {
+		return sbisdk.sdk.api.getDocumentHtml(documentHtmlConfigModule);
+	};
+
+//	Sbi.prototype.injectDocument = function(configModule) {
+//		return sbisdk.sdk.api.injectDocument(configModule);
+//	};
+//
+//	Sbi.prototype.getWorksheetHtml = function(configModule) {
+//		return sbisdk.sdk.api.getWorksheetHtml(configModule);
+//	};
+//
+//	Sbi.prototype.injectWorksheet = function(configModule) {
+//		return sbisdk.sdk.api.injectWorksheet(configModule);
+//	};
+//
+//	Sbi.prototype.getQbeHtml = function(configModule) {
+//		return sbisdk.sdk.api.getQbeHtml(configModule);
+//	};
+//
+//	Sbi.prototype.injectQbe = function(configModule) {
+//		return sbisdk.sdk.api.injectQbe(configModule);
+//	};
+//
+//	Sbi.prototype.getDataSetList = function(configModule) {
+//		return sbisdk.sdk.api.getDataSetList(configModule);
+//	};
+//
+//	Sbi.prototype.executeDataSet = function(configModule) {
+//		return sbisdk.sdk.api.executeDataSet(configModule);
+//	};
+
+	return {
+		Sbi : Sbi
+	}
+}());
+
+module.exports = baseUrlModule;
+module.exports = iFrameModule;
+module.exports = documentHtmlConfigModule;
 module.exports = sbiModule;

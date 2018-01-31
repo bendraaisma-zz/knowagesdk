@@ -19,8 +19,6 @@ export class Sbi {
 
     injectWorksheet(config: any): any;
 
-    setBaseUrl(): void;
-
 }
 
 export namespace Sbi {
@@ -40,8 +38,6 @@ export namespace Sbi {
         function injectQbe(config: any): any;
 
         function injectWorksheet(config: any): any;
-
-        function setBaseUrl(): void;
 
         namespace executeDataSet {
             const prototype: {
@@ -86,12 +82,6 @@ export namespace Sbi {
         }
 
         namespace injectWorksheet {
-            const prototype: {
-            };
-
-        }
-
-        namespace setBaseUrl {
             const prototype: {
             };
 
