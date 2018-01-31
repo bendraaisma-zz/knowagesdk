@@ -52,12 +52,12 @@ var documentHtmlConfigModule = (function() {
 
 var sbiModule = (function() {
 
-	var Sbi = function(configModule) {
-		sbisdk.sdk.services.setBaseUrl(baseUrlModule);
+	var Sbi = function(config = new baseUrlModule.BaseUrl()) {
+		sbisdk.sdk.services.setBaseUrl(config);
 	};
 
-	Sbi.prototype.getDocumentHtml = function(documentHtmlConfigModule) {
-		return sbisdk.sdk.api.getDocumentHtml(documentHtmlConfigModule);
+	Sbi.prototype.getDocumentHtml = function(config = new documentHtmlConfigModule.DocumentHtmlConfig()) {
+		return sbisdk.sdk.api.getDocumentHtml(config);
 	};
 
 //	Sbi.prototype.injectDocument = function(configModule) {
