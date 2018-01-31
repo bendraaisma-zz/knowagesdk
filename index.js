@@ -21,7 +21,7 @@ var sbiModule = (function() {
 				name : 'Content-Type',
 				value : 'application/x-www-form-urlencoded'
 			} ],
-			callbackOk : callback
+			callback : callback
 		});
 	};
 
