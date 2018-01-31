@@ -1,5 +1,7 @@
-var cometdJquery = require("cometd-jquery");
-var sbisdk = require("./sbisdk-all-production");
+'use strict'
+
+const cometdJquery = require("cometd-jquery");
+const sbisdk = require("./sbisdk-all-production");
 
 module.exports = {
 	setBaseUrl : function(config) {
