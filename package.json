@@ -1,0 +1,26 @@
+{
+  "name": "knowagesdk",
+  "version": "1.0.0",
+  "description": "NPM Javascript SpagoBI API",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/bendraaisma/knowagesdk.git"
+  },
+  "keywords": [
+    "SpagoBI",
+    "Knowage"
+  ],
+  "author": "Bernard Arjan Draaisma <bendraaisma@gmail.com> (https://github.com/bendraaisma/knowagesdk)",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/bendraaisma/knowagesdk/issues"
+  },
+  "homepage": "https://github.com/bendraaisma/knowagesdk#readme",
+  "dependencies": {
+    "cometd-jquery": "^3.0.0"
+  }
+}
