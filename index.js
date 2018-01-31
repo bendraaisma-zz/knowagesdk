@@ -15,7 +15,7 @@ var sbiModule = (function() {
 	};
 
 	Sbi.prototype.authenticate = function(user, password, callback) {
-		return sbisdk.sdk.api.authenticate({
+		sbisdk.sdk.api.authenticate({
 			credentials : 'user=' + user + '&password=' + password,
 			headers : [ {
 				name : 'Content-Type',
