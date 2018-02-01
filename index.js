@@ -35,7 +35,7 @@ var sbiModule = (function() {
 			displayToolbar : true,
 			canResetParameters : false,
 			iframe : {
-				style : 'border: 0px;'
+				style : 'border: 0px; heigth: 100%; width: 100%'
 			}
 		});
 	};
