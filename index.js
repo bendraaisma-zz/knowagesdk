@@ -32,7 +32,7 @@ var sbiModule = (function() {
 			documentLabel : documentLabel,
 			executionRole : '/spagobi/user',
 			parameters : parameters,
-			displayToolbar : true,
+			displayToolbar : false,
 			canResetParameters : false,
 			iframe : {
 				style : 'border: 0px; height: 100%; width: 100%'
