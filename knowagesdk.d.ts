@@ -9,7 +9,7 @@ export class Sbi {
 export namespace Sbi {
     function authenticate(user: string, password: string, callback: any): void;
 
-    function getDocumentHtml(documentLabel: string, parameters: string[]): any;
+    function getDocumentHtml(documentLabel: string, parameters: any): any;
 
     namespace authenticate {
         const prototype: {
