@@ -16,11 +16,10 @@ var sbiModule = (function() {
 
 	Sbi.prototype.authenticate = function(user, password, callback) {
 		sbisdk.sdk.api.authenticate({
-			credentials : 'user=' + user + '&password=' + password,
-			headers : [ {
-				name : 'Content-Type',
-				value : 'application/x-www-form-urlencoded'
-			} ],
+			params : {
+				user : user,
+				password : password
+			},
 			callback : {
 				fn : callback,
 				scope : this
