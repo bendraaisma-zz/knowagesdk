@@ -3,7 +3,7 @@ export class Sbi {
 
     authenticate(user: string, password: string, callback: any): void;
 
-    getDocumentHtml(documentLabel: string, parameters: string[]): any;
+    getDocumentHtml(documentLabel: string, parameters: any): any;
 }
 
 export namespace Sbi {
