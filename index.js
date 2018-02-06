@@ -27,7 +27,7 @@ var sbiModule = (function() {
 		});
 	};
 
-	Sbi.prototype.getDocumentHtml = function(documentLabel, parameters) {
+	Sbi.prototype.getDocumentHtml = function(documentLabel, parameters, style) {
 		return sbisdk.sdk.api.getDocumentHtml({
 			documentLabel : documentLabel,
 			executionRole : '/spagobi/user',
@@ -35,7 +35,7 @@ var sbiModule = (function() {
 			displayToolbar : false,
 			canResetParameters : false,
 			iframe : {
-				style : 'border: 0px; height: 100%; width: 100%'
+				style : style // 'border: 0px; height: 100%; width: 100%'
 			}
 		});
 	};

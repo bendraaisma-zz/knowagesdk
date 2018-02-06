@@ -3,13 +3,13 @@ export class Sbi {
 
     authenticate(user: string, password: string, callback: any): void;
 
-    getDocumentHtml(documentLabel: string, parameters: any): any;
+    getDocumentHtml(documentLabel: string, parameters?: any, style?: string): any;
 }
 
 export namespace Sbi {
     function authenticate(user: string, password: string, callback: any): void;
 
-    function getDocumentHtml(documentLabel: string, parameters: any): any;
+    function getDocumentHtml(documentLabel: string, parameters?: any, style?: string): any;
 
     namespace authenticate {
         const prototype: {

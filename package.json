@@ -1,6 +1,6 @@
 {
   "name": "knowagesdk",
-  "version": "1.0.26",
+  "version": "1.0.27",
   "description": "NPM Javascript SpagoBI API",
   "main": "index.js",
   "typings": "knowagesdk.d.ts",
