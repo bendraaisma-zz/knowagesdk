@@ -27,13 +27,13 @@ var sbiModule = (function() {
 		});
 	};
 
-	Sbi.prototype.getDocumentHtml = function(documentLabel, parameters, style) {
+	Sbi.prototype.getDocumentHtml = function(documentLabel, displayToolbar, canResetParameters, parameters, style) {
 		return sbisdk.sdk.api.getDocumentHtml({
 			documentLabel : documentLabel,
 			executionRole : '/spagobi/user',
 			parameters : parameters,
-			displayToolbar : false,
-			canResetParameters : false,
+			displayToolbar : displayToolbar,
+			canResetParameters : canResetParameters,
 			iframe : {
 				style : style // 'border: 0px; height: 100%; width: 100%'
 			}
